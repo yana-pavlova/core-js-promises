@@ -42,8 +42,6 @@ async function getPromiseResult(source) {
   }
 }
 
-console.log(getPromiseResult(Promise.resolve('success')));
-
 /**
  * Takes an array of promises and returns a promise that resolves with the value of the first successfully resolved promise From the given array.
  * If all promises in the array are rejected, it returns a promise that is rejected.

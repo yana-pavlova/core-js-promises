@@ -33,9 +33,16 @@ function getPromise(number) {
  * Promise.resolve('success') => promise that will be fulfilled with 'success' value
  * Promise.reject('fail')     => promise that will be fulfilled with 'fail' value
  */
-function getPromiseResult(/* source */) {
-  throw new Error('Not implemented');
+async function getPromiseResult(source) {
+  try {
+    await source;
+    return 'success';
+  } catch {
+    return 'fail';
+  }
 }
+
+console.log(getPromiseResult(Promise.resolve('success')));
 
 /**
  * Takes an array of promises and returns a promise that resolves with the value of the first successfully resolved promise From the given array.
